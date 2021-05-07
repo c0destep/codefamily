@@ -21,11 +21,15 @@
   scrollbar-width: thin;
   scroll-behavior: smooth;
   list-style: none;
+  transition: all 0.5s;
 }
 
 body {
   font-family: var(--font-default);
   font-size: var(--font-size-default);
+  background-color: var(--color-light);
+  color: var(--color-text-light);
+  scrollbar-color: var(--color-light) var(--color-text-light);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -48,16 +52,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s;
+  background: var(--color-light);
 }
 
 .sticky {
   height: 5rem;
+  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
 }
 
 .sticky .container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .video {
@@ -67,7 +73,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 1s;
 }
 
 .sticky .video {
@@ -84,9 +89,9 @@ header {
   letter-spacing: 8px;
   text-align: center;
   text-transform: uppercase;
-  transition: 1s;
   z-index: 999;
   user-select: none;
+  color: var(--color-white);
 }
 
 .sticky .logo {
@@ -96,6 +101,7 @@ header {
   transform: translate(0, -50%);
   width: auto;
   animation: focus-in-contract 1s;
+  color: var(--color-text-light);
 }
 
 .navbar {
@@ -106,7 +112,6 @@ header {
 
 .navbar .navbar-nav {
   position: relative;
-  transition: 1s;
   transform: translateX(100px);
   display: flex;
   opacity: 0;
@@ -139,144 +144,95 @@ header {
   outline: none;
   box-shadow: none;
   cursor: pointer;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
+}
+
+.navbar .navbar-nav a:focus {
+  font-size: 0.8rem;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+.toggle-theme {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.toggle-theme::before {
+  content: "\f186";
+  font-size: 1.5rem;
+  font-family: "Font Awesome 5 Free";
 }
 
 main {
-  margin-top: 30vh;
+  margin-top: calc(30vh + 5rem);
 }
 
-main section {
-  padding: 0 3rem;
-  height: 75vh;
-}
-
-.welcome {
+main section,
+footer {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
 }
 
-.welcome .box {
-  width: 450px;
+.box {
+  width: 100%;
+  max-width: 30rem;
+  flex: 1 1 auto;
 }
 
-.welcome .box.box-left .title {
+h2 {
   font-family: "Aclonica", sans-serif;
-  font-size: 3rem;
-  font-weight: 400;
+  font-size: 2.5rem;
 }
 
-.welcome .box.box-left .description {
+p {
   font-family: "Julius Sans One", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 300;
-  margin-top: 2rem;
-}
-
-.welcome .box.box-right {
-  display: inline-flex;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .icon-box {
-  position: absolute;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 8rem;
+  height: 8rem;
   padding: 1rem;
-  transition: all 1s;
-}
-
-.icon-box > img {
-  position: relative;
-  width: 5.5rem;
-}
-
-.welcome .box .box-center {
+  background: var(--color-light);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  margin-top: 2rem;
 }
 
-.welcome .box .box-center > img {
-  width: 10rem;
-  opacity: 0.5;
+.icon-box img {
+  width: 100%;
+  height: 100%;
 }
 
 .team {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.team .box {
-  position: relative;
-  width: 50%;
 }
 
 .services {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.services .box {
-  position: relative;
-  width: 50%;
 }
 
 .about {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.about .box {
-  position: relative;
-  width: 50%;
 }
 
 .gallery {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.gallery .box {
-  position: relative;
-  width: 50%;
 }
 
 .contact {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.contact .box {
-  position: relative;
-  width: 50%;
-}
-
-footer {
-  height: 50vh;
-  min-height: 15rem;
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .enterprise {
   text-align: center;
-  width: 100%;
-}
-
-.enterprise h2 {
-  font-size: 3rem;
-  animation: focus-in-contract 2s;
-}
-
-.enterprise small {
-  font-size: 0.75rem;
-  font-variant: small-caps;
 }
 
 .links {
@@ -315,10 +271,30 @@ footer {
   outline: none;
   box-shadow: none;
   cursor: pointer;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
 }
 
 .btn:focus {
   font-size: 0.9rem;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+.card {
+  width: 300px;
+  background: var(--color-light);
+  padding: 3rem 2.75rem;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+input {
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+input:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
 }
 
 /* Start - Dark Mode Page */
@@ -338,8 +314,8 @@ body.dark .sticky {
     2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-body.dark .logo {
-  color: #fff;
+body.dark .sticky .logo {
+  color: var(--color-text-dark);
 }
 
 body.dark .navbar .navbar-nav a {
@@ -360,6 +336,12 @@ body.dark .icon-box {
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
     -3px -3px 7px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .toggle-theme::before {
+  content: "\f185";
+  font-size: 1.5rem;
+  font-family: "Font Awesome 5 Free";
 }
 
 body.dark .btn {
@@ -404,76 +386,7 @@ body.dark .card .footer {
 
 /* End - Dark Mode Page */
 
-/* Start - Light Mode Page */
-
-body.light {
-  background-color: var(--color-light);
-  color: var(--color-text-light);
-  scrollbar-color: var(--color-light) var(--color-text-light);
-}
-
-body.light header {
-  background: var(--color-light);
-}
-
-body.light .sticky {
-  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
-}
-
-body.light .logo {
-  color: #000;
-}
-
-body.light .navbar .navbar-nav a {
-  color: var(--color-primary);
-  background-color: var(--color-light);
-  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
-}
-
-body.light .navbar .navbar-nav a:focus {
-  font-size: 0.8rem;
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
-}
-
-body.light .icon-box {
-  background: var(--color-light);
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
-}
-
-body.light .btn {
-  color: var(--color-primary);
-  background-color: var(--color-light);
-  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
-}
-
-body.light .btn:focus {
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
-}
-
-body.light .card {
-  width: 300px;
-  background: var(--color-light);
-  padding: 3rem 2.75rem;
-  border-radius: 10px;
-  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
-}
-
-body.light input {
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
-}
-
-body.light input:focus {
-  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
-}
-
-/* End - Light Mode Page */
-
 @media (min-width: 275px) and (max-width: 359.98px) {
-  .sticky .video {
-    opacity: 0;
-  }
-
   .navbar .navbar-nav {
     display: none;
     opacity: 0;
@@ -504,19 +417,18 @@ body.light input:focus {
 
   .sticky .toggle {
     position: fixed;
-    top: calc(4rem / 8);
     right: 1rem;
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background: var(--color-white) url("../assets/image/menu-outline.svg");
+    background: var(--color-light) url("../assets/image/menu-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .sticky .toggle.active {
-    background: var(--color-white) url("../assets/image/close-outline.svg");
+    background: var(--color-light) url("../assets/image/close-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -604,14 +516,14 @@ body.light input:focus {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background: var(--color-white) url("../assets/image/menu-outline.svg");
+    background: var(--color-light) url("../assets/image/menu-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .sticky .toggle.active {
-    background: var(--color-white) url("../assets/image/close-outline.svg");
+    background: var(--color-light) url("../assets/image/close-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -699,14 +611,14 @@ body.light input:focus {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background: var(--color-white) url("../assets/image/menu-outline.svg");
+    background: var(--color-light) url("../assets/image/menu-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .sticky .toggle.active {
-    background: var(--color-white) url("../assets/image/close-outline.svg");
+    background: var(--color-light) url("../assets/image/close-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -793,14 +705,14 @@ body.light input:focus {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background: var(--color-white) url("../assets/image/menu-outline.svg");
+    background: var(--color-light) url("../assets/image/menu-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .sticky .toggle.active {
-    background: var(--color-white) url("../assets/image/close-outline.svg");
+    background: var(--color-light) url("../assets/image/close-outline.svg");
     background-size: 2rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -855,17 +767,6 @@ body.light input:focus {
     font-size: 2rem;
     margin: 0 0.25rem;
   }
-}
-
-.at-item {
-  color: #3079ed;
-  animation-name: focus-in-contract;
-  animation-duration: 2s;
-  animation-timing-function: ease-out;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
 }
 
 @keyframes focus-in-contract {

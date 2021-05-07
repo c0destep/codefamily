@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/app.css">
     <link rel="shortcut icon" href="public/assets/image/favicon.ico" type="image/x-icon">
-    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="public/css/fontawesome/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
     <title>Welcome | CodeFamily</title>
 </head>
 
-<body class="light">
+<body>
     <header>
         <video class="video" src="public/assets/video/coding_developer.mp4" autoplay loop></video>
         <div class="container">
@@ -42,6 +41,9 @@
                     <li class="nav-items">
                         <a href="login.html">Login</a>
                     </li>
+                    <li class="nav-items">
+                        <div class="toggle-theme btn"></div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -50,32 +52,25 @@
         <div class="container">
             <section id="welcome" class="welcome">
                 <div class="box box-left">
-                    <h2 class="title">Inspirados por algo maior.</h2>
-                    <h2 class="title">Compromisso com sua privacidade.</h2>
-                    <p class="description">
+                    <h2>Inspirados por algo maior.</h2>
+                    <h2>Compromisso com sua privacidade.</h2>
+                    <p>
                         Criado para liberta você novamente e não há nada que juntos não façamos
                     </p>
-                    <div class="box-center">
-                        <img src="public/assets/image/Avengers_logo.svg" alt="Avengers Logo">
-                        <img src="public/assets/image/IBM-Emblema.png" alt="IBM Logo">
-                    </div>
                 </div>
                 <div class="box box-right">
                     <div class="icon-box">
                         <img class="icon" src="public/assets/image/computador-portatil.png">
                     </div>
+                </div>
+            </section>
+            <section id="team" class="team">
+                <div class="box box-left">
                     <div class="icon-box">
                         <img class="icon" src="public/assets/image/computador.png">
                     </div>
                 </div>
-            </section>
-            <section id="team" class="team">
-                <div class="box">
-                    <div class="icon-box">
-                        <img class="icon" src="public/assets/image/computador-alt.svg">
-                    </div>
-                </div>
-                <div class="box">
+                <div class="box box-right">
                     <h2>Lorem ipsum</h2>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe quaerat molestias blanditiis iure,
@@ -85,7 +80,7 @@
                 </div>
             </section>
             <section id="services" class="services">
-                <div class="box">
+                <div class="box box-left">
                     <h2>Lorem ipsum</h2>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe quaerat molestias blanditiis iure,
@@ -93,19 +88,19 @@
                         perferendis qui doloremque nesciunt!
                     </p>
                 </div>
-                <div class="box">
+                <div class="box box-right">
                     <div class="icon-box">
                         <img class="icon" src="public/assets/image/lupa.png">
                     </div>
                 </div>
             </section>
             <section id="about" class="about">
-                <div class="box">
+                <div class="box box-left">
                     <div class="icon-box">
                         <img class="icon" src="public/assets/image/impressao-digital.png">
                     </div>
                 </div>
-                <div class="box">
+                <div class="box box-right">
                     <h2>Lorem ipsum</h2>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe quaerat molestias blanditiis iure,
@@ -115,7 +110,7 @@
                 </div>
             </section>
             <section id="gallery" class="gallery">
-                <div class="box">
+                <div class="box box-left">
                     <h2>Lorem ipsum</h2>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe quaerat molestias blanditiis iure,
@@ -123,19 +118,19 @@
                         perferendis qui doloremque nesciunt!
                     </p>
                 </div>
-                <div class="box">
+                <div class="box box-right">
                     <div class="icon-box">
                         <img class="icon" src="public/assets/image/espiao.png">
                     </div>
                 </div>
             </section>
             <section id="contact" class="contact">
-                <div class="box">
+                <div class="box box-left">
                     <div class="icon-box">
                         <img class="icon" src="public/assets/image/computador.svg">
                     </div>
                 </div>
-                <div class="box">
+                <div class="box box-right">
                     <h2>Lorem ipsum</h2>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe quaerat molestias blanditiis iure,
@@ -149,39 +144,35 @@
     <footer>
         <div class="container">
             <div class="enterprise">
-                <h2>
-                    <ion-icon name="shield-checkmark"></ion-icon>
-                </h2>
-                <small>Nós lutamos as suas batalhas</small>
+                <h3>Nós lutamos as suas batalhas</h3>
             </div>
             <div class="links">
                 <span>© 2020 Direitos Autorais Reservados</span>
                 <ul>
                     <li>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>Home
+                        Home
                     </li>
                     <li>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>Team
+                        Team
                     </li>
                     <li>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>Services
+                        Services
                     </li>
                     <li>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>About
+                        About
                     </li>
                     <li>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>Gallery
+                        Gallery
                     </li>
                     <li>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>Contact
+                        Contact
                     </li>
                 </ul>
             </div>
             <div class="social">
-                <ion-icon name="logo-discord"></ion-icon>
-                <ion-icon name="logo-github"></ion-icon>
-                <ion-icon name="logo-linkedin"></ion-icon>
-                <ion-icon name="logo-twitter"></ion-icon>
+                <i class="fab fa-discord"></i>
+                <i class="fab fa-github"></i>
+                <i class="fab fa-linkedin"></i>
             </div>
         </div>
     </footer>
