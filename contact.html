@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 2500px;
+            background-color: #1F1F1F;
+            overflow-x: hidden;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .menu {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            height: auto;
+            background-color: transparent;
+            color: #EEE;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .menu .item.logo {
+            border: none;
+            justify-self: flex-start;
+            margin-right: auto;
+            font-size: 2rem;
+        }
+
+        .menu .item {
+            width: auto;
+            text-align: center;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            margin: 20px 15px;
+            padding: 10px;
+        }
+
+        .menu .item a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu .item:hover {
+            background-color: rgba(0,0,0,.2);
+        }
+
+        img {
+            width: 256px;
+        }
+
+        .logo-centro {
+            width: 100%;
+            height: 512px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <div class="item logo">
+            Avengers
+        </div>
+        <div class="item">
+            <a href="#">
+                Home
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                Inimigos
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                Historia
+            </a>
+        </div>
+    </nav>
+    <div class="logo-centro">
+        <img src="public/assets/image/Avengers_logo.svg">
+    </div>
+</body>
+
+</html>

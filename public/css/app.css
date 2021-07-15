@@ -66,7 +66,7 @@ header {
   align-items: center;
 }
 
-.video {
+.embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -75,7 +75,7 @@ header {
   object-fit: cover;
 }
 
-.sticky .video {
+.sticky .embed {
   opacity: 0;
 }
 
@@ -282,11 +282,23 @@ p {
 }
 
 .card {
-  width: 300px;
+  width: 30rem;
   background: var(--color-light);
-  padding: 3rem 2.75rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+.card .header {
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.card .body {
+}
+
+.card .footer {
 }
 
 input {
@@ -375,7 +387,7 @@ body.dark input:focus {
     -1px -1px 2px rgba(255, 255, 255, 0.05);
 }
 
-body.dark .card .title {
+body.dark .card .header {
 }
 
 body.dark .card .body {
